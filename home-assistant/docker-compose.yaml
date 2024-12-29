@@ -3,7 +3,11 @@ services:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
-      - /home/chkpe/home-assistant/config:/config
+      - type: bind
+        source: /home/chkpe/home-assistant/config
+        target: /config
+        bind:
+          create_host_path: true
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
     restart: unless-stopped
