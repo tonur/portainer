@@ -4,6 +4,8 @@ services:
   tailscale-nginx:
     image: tailscale/tailscale:latest
     hostname: tailscale-nginx
+    environment:
+      - TS_EXTRA_ARGS=--advertise-exit-node
     volumes:
       - /home/chkpe/tailscale-nginx/state:/var/lib/tailscale
     devices:
