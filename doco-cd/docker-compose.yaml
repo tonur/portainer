@@ -4,7 +4,7 @@ services:
     image: ghcr.io/kimdre/doco-cd:latest
     restart: unless-stopped
     ports:
-      - "80:1234"
+      - "80:80"
     group_add:
       - "971"
     volumes:
