@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: doco-cd
+    image: ghcr.io/kimdre/doco-cd:latest
+    restart: unless-stopped
+    ports:
+      - "80:1234"
+    group_add:
+      - "971"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
